@@ -1,0 +1,32 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+  - name: installing apache
+    yum:
+      name: httpd
+      state: installed
+    tags:
+      - install
+  - name: coping the httpd
+    copy:
+      src: "/home/centos/index.yml"
+      dest: "/var/www/html"
+    tags:
+      - copy
+  - name: start apache
+    service:
+      name: httpd
+      state: started
+    tags:
+      - start
+  - name: uninstall the apache
+    yum:
+      name: httpd
+      state: absent
+    tags:
+      - uninstall
+  
+
+  
+      

@@ -1,0 +1,4 @@
+[testserver]
+172.31.17.6 ansible_user=ec2-user
+172.31.95.147 ansible_user=ec2-user
+172.31.90.15  ansible_user=ec2-user
